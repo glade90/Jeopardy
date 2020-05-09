@@ -30,13 +30,13 @@ class JeopardyBoard:
         for iCat in range(len(self.getCategoryTitles())):
             for val in self.getValues():
                 ques = {}
-                ques['value'] = val
+                ques['value'] = str(val)
                 ques['category'] = self.getCategoryTitles()[iCat]
                 ques['question'] = self.getQuestion(val,iCat)
                 ques['answer'] = self.getAnswer(val,iCat)
                 questions[i] = ques
                 i = i+1
-        return questions
+        return json.dumps(questions)
                 
     def saveBoardObjectsToTxt(self):
         with open('questions.txt', 'w') as outfile1,\
