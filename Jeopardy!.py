@@ -25,11 +25,6 @@ class JeopardyBoard:
         self.saveBoardObjectsToTxt()
         
     def getJson(self):
-#        JDic = {}
-#        jDic['values']=self.getValues().tolist()
-#        categories = {}
-#        categories['categoryID'] = list(range(1,self.cats+1))
-#        categories['category'] = self.getCategoryTitles()
         questions = {}
         i = 0 
         for iCat in range(len(self.getCategoryTitles())):
@@ -143,8 +138,3 @@ class JeopardyBoard:
         return categoryTitles,values,questions,answers
 
 main()
-
-#print('Category Titles:' + str(categoryTitles))
-#print('Values:' + str(values))
-#print('Questions:' + str(questions))
-#print('Answers:' + str(answers))  
